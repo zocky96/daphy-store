@@ -1,0 +1,73 @@
+<Users@MDScreen>:
+     MDTextField:
+          id:nom
+          hint_text:'Nom'
+          mode:"rectangle"
+          size_hint_x:.39
+          pos_hint:{'center_x':.23,'center_y':.93}
+     MDTextField:
+          id:prenom
+          hint_text:'Prenom'
+          mode:"rectangle"
+          size_hint_x:.39
+          pos_hint:{'center_x':.67,'center_y':.93}
+     MDTextField:
+          id:user_name
+          hint_text:"Nom d'utilisateur"
+          mode:"rectangle"
+          size_hint_x:.39
+          pos_hint:{'center_x':.23,'center_y':.82}
+     MDTextField:
+          id:email
+          hint_text:'Email'
+          mode:'rectangle'
+          size_hint_x:.39
+          pos_hint:{'center_x':.67,'center_y':.82}
+     MDTextField:
+          id:password
+          hint_text:'Mot de passe'
+          mode:"rectangle"
+          password:True
+          size_hint_x:.39
+          pos_hint:{'center_x':.23,'center_y':.71}
+     MDTextField:
+          id:conf_password
+          hint_text:'Confirmer le mot de passe'
+          mode:"rectangle"
+          password:True
+          size_hint_x:.39
+          pos_hint:{'center_x':.67,'center_y':.71}
+     MDTextField:
+          id:poste
+          hint_text:'Poste'
+          mode:"rectangle"
+          on_focus: if self.focus: app.posteMenu.open()
+          size_hint_x:.39
+          pos_hint:{'center_x':.23,'center_y':.60}
+
+
+     MDRaisedButton:
+          id:save
+          text:'Enregistrer'
+          pos_hint:{'center_x':.23,'center_y':.48}
+          on_release:app.save_user()
+     MDRaisedButton:
+          id:modify
+          text:'Modifier'
+          pos_hint:{'center_x':.48,'center_y':.48}
+          on_release:app.modify_user()
+     MDRaisedButton:
+          id:delete
+          text:'Suprimmer'
+          pos_hint:{'center_x':.73,'center_y':.48}
+          on_release:app.delete_user()
+     MDScreen:
+          id:table
+
+
+
+
+
+
+
+

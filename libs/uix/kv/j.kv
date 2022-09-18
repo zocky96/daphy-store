@@ -1,0 +1,66 @@
+<Home>:
+     name:'home'
+     MDBoxLayout:
+          orientation:'vertical'
+          MDToolbar:
+               title:"Daphy store"
+               specific_text_color:0,0,0,1
+               left_action_items:[['menu',lambda x:app.rail_open()]]
+               md_bg_color:236/255,237/255,235/255,1
+               MyNotif:
+                    id:notification
+                    text:'0'
+                    MDIconButton:
+                         icon:'cart'
+                         pos_hint:{"center_x":.5}
+                         on_release: app.pannier()
+
+               MDIconButton:
+                    icon:'account-circle'
+               MDIconButton:
+                    icon:'logout'
+                    on_release:app.logout()
+
+          MDBoxLayout:
+               MDNavigationRail:
+                    id:rail
+                    visible: "Persistent"
+                    use_resizeable: True
+                    md_bg_color:42/255,62/255,83/255,1
+                    color_normal:1,1,1,1
+                    color_active:1,0,0,1
+                    font_style:'H6'
+                    #use_title:True
+                    MDNavigationRailItem:
+                         text:'Acceuil'
+                         icon:'home'
+                         user_font_size:'30sp'
+                         theme_text_color:'Custom'
+                         text_color:1,1,1,1
+                         on_release:app.dashboard()
+                    MDNavigationRailItem:
+                         text:'Produits'
+                         icon:'file-check-outline'
+                         on_release:app.Produit()
+                    MDNavigationRailItem:
+                         text:'Vente'
+                         icon:'cart'
+                         on_release:app.Vente()
+
+                    MDNavigationRailItem:
+                         text:'Stats'
+                         icon:'trending-up'
+                         on_release:app.Stat()
+                    MDNavigationRailItem:
+                         text:'Rapport'
+                         icon:'notebook'
+                         on_release:app.rapport()
+                    MDNavigationRailItem:
+                         text:'User'
+                         icon:'account-circle'
+                         on_release:app.users()
+               MDCard:
+                    id:container
+                    MDLabel:
+                         text:'ok'
+<MyNotif@AKBadgeLayout>

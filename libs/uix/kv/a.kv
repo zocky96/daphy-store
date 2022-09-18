@@ -1,0 +1,40 @@
+<Cart>:
+     name:'cart'
+     MDIconButton:
+          icon:'arrow-left'
+          pos_hint:{'center_y':.93}
+          on_release:app.home()
+     MDScreen:
+          id:table
+     MDCard:
+          size_hint_x:.3
+          size_hint_y:.1
+          md_bg_color:51/255,121/255,183/255,1
+          pos_hint:{'center_x':.20,"center_y":.15}
+          orientation:'vertical'
+          MDLabel:
+               text:'Somme des produits'
+               halign:'center'
+               bold:True
+               theme_text_color:'Custom'
+               text_color:1,1,1,1
+          MDLabel:
+               id:total_cash
+               text:'0 Gdes'
+               halign:'center'
+               theme_text_color:'Custom'
+               text_color:1,1,1,1
+     MDIconButton:
+          icon:'delete-empty'
+          theme_text_color:'Custom'
+          text_color:1,0,0,1
+          pos_hint:{'center_x':.49,"center_y":.15}
+          on_release:app.clearCart()
+     MDIconButton:
+          icon:'cart-off'
+          pos_hint:{'center_x':.59,"center_y":.15}
+          on_release:app.removeToCart()
+     MDRaisedButton:
+          text:'Vendre'
+          pos_hint:{'center_x':.90,"center_y":.15}
+          on_release:app.buyToCart()

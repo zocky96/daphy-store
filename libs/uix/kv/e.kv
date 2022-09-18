@@ -1,0 +1,31 @@
+<Rapport@MDScreen>:
+     MDRaisedButton:
+          id:date
+          text:'1996-12-25'
+          pos_hint:{"center_y":.93,"center_x":.1}
+          on_release:app.show_date()
+     MDTextField:
+          id:table
+          mode:'rectangle'
+          size_hint_x:.4
+          hint_text:'Rapport sur'
+          on_focus: if self.focus: app.theTables.open()
+          pos_hint:{"center_y":.93,"center_x":.45}
+     MDRaisedButton:
+          text:'Imprimmer'
+          pos_hint:{"center_y":.93,"center_x":.79}
+          on_release:app.imprimmer()
+     MDBoxLayout:
+          #md_bg_color:1,0,0,1
+          size_hint_x:.8
+          size_hint_y:.5
+          pos_hint:{"center_x":.43,"center_y":.5}
+          MDIconButton:
+               icon:'printer'
+               user_font_size:'65sp'
+               pos_hint:{"center_y":.9}
+          MDLabel:
+               text:"Les rapports imprimmer seront stocker dans le dossier \n'Daphy rapport' qui se trouve sur le bureau."
+               #halign:'center'
+               pos_hint:{"center_x":.1,"center_y":.85}
+

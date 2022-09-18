@@ -1,0 +1,15 @@
+create database goutem;
+use goutem;
+create table restaurent (id int primary key auto_increment,nom varchar(255),adresse varchar(255),telephone varchar(255),logo varchar(255),heure_de_fermeture int,heure_d_ouverture int,slogan varchar(255));
+create table food(id int primary key auto_increment,nom_restaurent varchar(255),nom varchar(255),prix int,quantite int,image varchar(255),categorie varchar(255));
+create table order_(id int primary key auto_increment,food_id int,quantite int,total_price int,adresse varchar(255),telephone varchar(20),statut enum("pending","received"));
+create table user_manager(id int primary key auto_increment,nom varchar(30),prenom varchar(30),user_name varchar(255),password varchar(255),poste enum("administrateur","directeur","secretaire"),email varchar(255),tentative int,blocked enum("True","False"));
+create table moto_driver(id int primary key auto_increment,user_name varchar(30),password varchar(40),nom varchar(30),prenom varchar(30),adresse varchar(255),license enum("True","False"),date_de_naissance date);
+insert into user_manager(nom,prenom,user_name,password,poste,email,tentative,blocked) values("Desir","Renaldo","zock","03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4","administrateur","zocky58@gmail.com",0,'False');
+create table categorie(id int primary key auto_increment,category varchar(255),picture_category varchar(255));
+insert categorie(category) values("Riz");
+insert categorie(category) values("Pates");
+insert categorie(category) values("Fritures");
+insert categorie(category) values("Creme glacee");
+insert categorie(category) values("Patisserie");
+insert categorie(category) values("Boisson");

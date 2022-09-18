@@ -1,0 +1,28 @@
+<Vente@MDScreen>:
+     MDTextField:
+          id:nom_du_produit
+          hint_text:'Nom du produit'
+          size_hint_x:.39
+          mode:'rectangle'
+          on_focus: if self.focus: app.theProductsNames.open()
+          pos_hint:{'center_x':.23,'center_y':.93}
+     MDTextField:
+          id:quantite
+          hint_text:'Quantite'
+          size_hint_x:.39
+          mode:'rectangle'
+          pos_hint:{'center_x':.67,'center_y':.93}
+     MDScreen:
+          id:table
+     MDRaisedButton:
+          text:'Ajouter au panier'
+          pos_hint:{'center_x':.33,'center_y':.80}
+          on_release:app.addToCart()
+     MDRaisedButton:
+          text:'Vendre'
+          pos_hint:{'center_x':.53,'center_y':.80}
+          on_release:app.vendreProduct()
+     MDRaisedButton:
+          text:'Annulee la vente'
+          pos_hint:{'center_x':.73,'center_y':.80}
+          on_release:app.cancelVente()

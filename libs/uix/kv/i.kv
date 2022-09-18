@@ -1,0 +1,70 @@
+<Produit@MDScreen>:
+
+     MDTextField:
+          id:com_name
+          hint_text:'Nom commercial'
+          mode:"rectangle"
+          size_hint_x:.39
+          pos_hint:{'center_x':.23,'center_y':.93}
+     MDTextField:
+          id:pharm_name
+          hint_text:'Nom pharmaceutique'
+          mode:"rectangle"
+          size_hint_x:.39
+          pos_hint:{'center_x':.67,'center_y':.93}
+     MDTextField:
+          id:prix
+          hint_text:'Prix'
+          mode:"rectangle"
+          size_hint_x:.39
+          pos_hint:{'center_x':.23,'center_y':.82}
+     MDTextField:
+          id:quantite
+          hint_text:'Quantite'
+          mode:'rectangle'
+          size_hint_x:.39
+          pos_hint:{'center_x':.67,'center_y':.82}
+     MDTextField:
+          id:type
+          hint_text:'Type de produit'
+          mode:"rectangle"
+          size_hint_x:.39
+          on_focus: if self.focus: app.typeProduit.open()
+          pos_hint:{'center_x':.23,'center_y':.71}
+     MDTextField:
+          id:fournisseur_name
+          hint_text:'Nom du fournisseur'
+          mode:"rectangle"
+          size_hint_x:.39
+          pos_hint:{'center_x':.67,'center_y':.61}
+     MDTextField:
+          id:fournisseur_num
+          hint_text:'Numero de telephone du fournisseur'
+          mode:"rectangle"
+          size_hint_x:.39
+          pos_hint:{'center_x':.23,'center_y':.61}
+     MDRaisedButton:
+          id:save
+          text:'Enregistrer'
+          pos_hint:{'center_x':.23,'center_y':.48}
+          on_release:app.save_product()
+     MDRaisedButton:
+          id:modify
+          text:'Modifier'
+          pos_hint:{'center_x':.48,'center_y':.48}
+          on_release:app.modidyProduct()
+     MDRaisedButton:
+          id:delete
+          text:'Suprimmer'
+          pos_hint:{'center_x':.73,'center_y':.48}
+          on_release:app.deleteProduct()
+     MDScreen:
+          id:table
+
+
+
+
+
+
+
+
